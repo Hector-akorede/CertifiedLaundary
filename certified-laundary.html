@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- fontawesome cdn link -->
-    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
     <!-- remixicon cdn link -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
     <!-- google font cdn link -->
@@ -40,9 +38,29 @@
                             Us</button>
                     </div>
                 </div>
-                <div class="md:hidden"><button class="text-gray-700 hover:text-teal-600 cursor-pointer">
-                        <div class="w-6 h-6 flex items-center justify-center"><i class="ri-menu-line text-xl"></i></div>
+                <div class="md:hidden"><button onclick="toggleMobileMenu()" id="mobile-menu-btn" class="text-gray-700 hover:text-teal-600 cursor-pointer">
+                        <div class="w-6 h-6 flex items-center justify-center"><i id="menu-icon" class="ri-menu-line text-xl"></i></div>
                     </button></div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white w-full px-4 py-4 shadow-lg">
+            <div class="space-y-4 align-center text-center flex flex-col">
+                <button onclick="window.location.href='#home'; toggleMobileMenu();"
+                    class="block text-gray-700 hover:text-teal-600 px-3 py-2 text-sm font-medium">Home</button>
+                <button onclick="window.location.href='#services'; toggleMobileMenu();"
+                    class="block text-gray-700 hover:text-teal-600 px-3 py-2 text-sm font-medium">Services</button>
+                <button onclick="window.location.href='#pricing'; toggleMobileMenu();"
+                    class="block text-gray-700 hover:text-teal-600 px-3 py-2 text-sm font-medium">Pricing</button>
+                <button onclick="window.location.href='#about'; toggleMobileMenu();"
+                    class="block text-gray-700 hover:text-teal-600 px-3 py-2 text-sm font-medium">About</button>
+                <button onclick="window.location.href='#contact'; toggleMobileMenu();"
+                    class="block text-gray-700 hover:text-teal-600 px-3 py-2 text-sm font-medium">Contact</button>
+                <button onclick="window.location.href='https://wa.me/1234567890'"
+                    class="block bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition duration-300">WhatsApp
+                    Us</button>
+            </div>
+        </div>
+    </nav>
             </div>
         </div>
     </nav>
@@ -54,8 +72,8 @@
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class=" items-center ">
                 <div class="text-center mx-auto hero-txt">
-                    <h2 class="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">Fresh, Clean &amp;<span class="text-teal-600"> Professional <br></span>Laundry Service</h2>
-                    <p class="text-xl text-2xl:lg text-gray-600 mb-8 leading-relaxed">Experience the convenience of premium laundry
+                    <h2 class="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight max-sm:mt-5">Fresh, Clean &amp;<span class="text-teal-600"> Professional <br></span>Laundry Service</h2>
+                    <p class="text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed">Experience the convenience of premium laundry
                         and dry cleaning services. We pick up, clean, and deliver your clothes with care and precision,
                         so you can focus on what matters most.</p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center"><button
@@ -536,6 +554,21 @@
     </footer>
 
 
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('menu-icon');
+  menu.classList.toggle('hidden');
+  if (menu.classList.contains('hidden')) {
+    icon.classList.remove('ri-close-line');
+    icon.classList.add('ri-menu-line');
+  } else {
+    icon.classList.remove('ri-menu-line');
+    icon.classList.add('ri-close-line');
+  }
+}
+</script>
 
 </body>
 

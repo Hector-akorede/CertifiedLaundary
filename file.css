@@ -1064,7 +1064,8 @@ img,video {
     --tw-ring-color: rgb(20 184 166 / var(--tw-ring-opacity, 1))
 }
 .hero-txt{
-    width: 950px !important;
+    max-width: 950px;
+    width: 100%;
 }
 
 @media(min-width: 640px) {
